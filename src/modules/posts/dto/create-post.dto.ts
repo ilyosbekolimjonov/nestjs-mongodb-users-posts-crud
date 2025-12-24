@@ -1,0 +1,14 @@
+import { IsMongoId, IsOptional, IsString, MinLength } from 'class-validator';
+
+export class CreatePostDto {
+    @IsString()
+    @MinLength(3)
+    title: string;
+
+    @IsOptional()
+    @IsString()
+    content?: string;
+
+    @IsMongoId()
+    userId: string;
+}
